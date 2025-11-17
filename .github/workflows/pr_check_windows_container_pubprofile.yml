@@ -40,10 +40,6 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-    - name: Logout from Azure Container Registry
-      run: |
-        docker logout env.CONTAINER_REGISTRY
-
     - name: Pull and tag an image and push it to ACR
       run: |
         pwd
