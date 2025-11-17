@@ -44,13 +44,6 @@ jobs:
       run: |
         docker logout env.CONTAINER_REGISTRY
 
-    - name: Login to Azure Container Registry
-      uses: azure/docker-login@v1
-      with:
-        login-server: ${{ env.CONTAINER_REGISTRY }}
-        username: ${{ secrets.WEBDEPLOY_TEST_ACR_USERNAME }}
-        password: ${{ secrets.WEBDEPLOY_TEST_ACR_PASSWORD }}
-
     - name: Pull and tag an image and push it to ACR
       run: |
         pwd
